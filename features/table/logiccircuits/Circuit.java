@@ -5,16 +5,16 @@ import java.util.LinkedList;
 
 public class Circuit {
 
-    List<logiccircuits.Gate> gates; // table
-    List<logiccircuits.Wire> wires; // table
-    int num_and = 0, num_or = 0, num_nand = 0, num_nor = 0, num_inv = 0; // table
+    List<logiccircuits.Gate> gates; //table
+    List<logiccircuits.Wire> wires; //table
+    int num_and = 0, num_or = 0, num_nand = 0, num_nor = 0, num_inv = 0; //table
 
     public Circuit(String s) {
-        gates = new LinkedList<logiccircuits.Gate>(); // table
-        wires = new LinkedList<logiccircuits.Wire>(); // table
+        gates = new LinkedList<logiccircuits.Gate>(); //table
+        wires = new LinkedList<logiccircuits.Wire>(); //table
     }
 
-    public int getGateNum(String type) { // table
+    public int getGateNum(String type) { //table
         switch (type) {
             case "and":
                 return num_and;
@@ -31,7 +31,7 @@ public class Circuit {
         }
     }
 
-    public void addOneGate(String type) { // table
+    public void addOneGate(String type) { //table
         switch (type) {
             case "and":
                 num_and += 1;
@@ -51,7 +51,7 @@ public class Circuit {
         }
     }
 
-    public void print() { // table
+    public void print() { //table
         System.out.format("circuit(%s).\n", this.name);
         
         System.out.println();

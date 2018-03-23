@@ -18,7 +18,7 @@ public class Main {
 	}
 	
 	public void create_circuit() {
-		Circuit xx = new Circuit("XX"); // base - create circuit
+		Circuit xx = new Circuit("XX"); //base - create circuit
 	    
 		Gate A = xx.Gate("A", 0, 1, "Input");
 	    Gate B = xx.Gate("B", 0, 1, "Input");
@@ -51,6 +51,7 @@ public class Main {
 	public static void main(String[] args) {
     	me = new Main();
     	me.print();
+    	System.out.println();
     	me.create_circuit();
 	}
 	

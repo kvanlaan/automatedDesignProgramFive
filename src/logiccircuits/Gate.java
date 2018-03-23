@@ -4,18 +4,18 @@ public abstract   class  Gate {
 	
 	public final String name;
 
-	
+	 //base
     int nInputPins, nOutputPins;
 
-	
+	 //base
     String type;
 
-	
+	 //base
     Circuit circuit;
 
-	
+	 //table
     
-    protected Gate  (Circuit circuit, String name, int nInputPins, int nOutputPins, String type) {
+    protected Gate  (Circuit circuit, String name, int nInputPins, int nOutputPins, String type) { //base
         this.circuit = circuit;
         
         this.name = name;
@@ -23,7 +23,7 @@ public abstract   class  Gate {
         this.nOutputPins = nOutputPins;
         this.type = type;
     
-        this.gid = this.getGateId(); // table
+        this.gid = this.getGateId(); //table
         this.addToCircuitTable(this.circuit); //table
     }
 
@@ -32,7 +32,7 @@ public abstract   class  Gate {
 
 	
     
-    protected String getGateId() { // table
+    protected String getGateId() { //table
         if ((this.type.equals("input")) || (this.type.equals("output"))) {
             return this.name.toLowerCase();
         } else {
@@ -44,7 +44,7 @@ public abstract   class  Gate {
 
 	
     
-    private void addToCircuitTable(Circuit xx) { // table
+    private void addToCircuitTable(Circuit xx) { //table
         xx.gates.add(this);
     }
 
@@ -56,7 +56,7 @@ public abstract   class  Gate {
 
 	
     
-    public void print() { // table
+    public void print() { //table
         System.out.format("gate(%s,%s,%d,%d).\n", this.name, this.type, this.nInputPins, this.nOutputPins);
     }
 

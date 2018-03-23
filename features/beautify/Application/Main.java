@@ -14,7 +14,7 @@ public class Main {
 	}
 	
 	public void create_circuit() {
-		Circuit xx = new Circuit("XX"); // beautify - create circuit
+		Circuit xx = new Circuit("XX"); //beautify - create circuit
 		
         Gate A = new Input(xx,"A");
         Gate B = new Input(xx,"B");

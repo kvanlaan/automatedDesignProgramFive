@@ -51,7 +51,7 @@ public   class  Main {
 	
 	
 	public void create_circuit  () {
-		Circuit xx = new Circuit("XX"); // table - create circuit
+		Circuit xx = new Circuit("XX"); //table - create circuit
 		
         Gate A = new Input(xx,"A");
         Gate B = new Input(xx,"B");
@@ -90,6 +90,7 @@ public   class  Main {
 	public static void main(String[] args) {
     	me = new Main();
     	me.print();
+    	System.out.println();
     	me.create_circuit();
 	}
 

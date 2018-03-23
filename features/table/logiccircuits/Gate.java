@@ -1,14 +1,14 @@
 package logiccircuits;
 
 public abstract class Gate {
-    String gid;
+    String gid; //table
     
     protected Gate(Circuit circuit, String name, int nInputPins, int nOutputPins, String type) {
-        this.gid = this.getGateId(); // table
+        this.gid = this.getGateId(); //table
         this.addToCircuitTable(this.circuit); //table
     }
     
-    protected String getGateId() { // table
+    protected String getGateId() { //table
         if ((this.type.equals("input")) || (this.type.equals("output"))) {
             return this.name.toLowerCase();
         } else {
@@ -18,7 +18,7 @@ public abstract class Gate {
         }
     }
     
-    private void addToCircuitTable(Circuit xx) { // table
+    private void addToCircuitTable(Circuit xx) { //table
         xx.gates.add(this);
     }
     
@@ -26,7 +26,7 @@ public abstract class Gate {
         return this.name;
     }
     
-    public void print() { // table
+    public void print() { //table
         System.out.format("gate(%s,%s,%d,%d).\n", this.name, this.type, this.nInputPins, this.nOutputPins);
     }
 }

@@ -7,13 +7,13 @@ public   class  Circuit {
 	
 	String name;
 
-	 // table
+	 //table
 
     public Circuit  (String s) {
         name = s;
     
-        gates = new LinkedList<logiccircuits.Gate>(); // table
-        wires = new LinkedList<logiccircuits.Wire>(); // table
+        gates = new LinkedList<logiccircuits.Gate>(); //table
+        wires = new LinkedList<logiccircuits.Wire>(); //table
     }
 
 	
@@ -21,7 +21,7 @@ public   class  Circuit {
      
     
     class  Gate  extends logiccircuits.Gate {
-		 // base
+		 //base
     	public Gate(Circuit circuit, String name, int nInputPins, int nOutputPins, String type) {
     		super(circuit, name, nInputPins, nOutputPins, type);
     	}
@@ -31,7 +31,7 @@ public   class  Circuit {
 
 	
     
-    public Gate Gate(String name, int nInputPins, int nOutputPins, String type) { // base
+    public Gate Gate(String name, int nInputPins, int nOutputPins, String type) { //base
 		return new Gate(this, name, nInputPins, nOutputPins, type);
     }
 
@@ -39,15 +39,15 @@ public   class  Circuit {
 
     List<logiccircuits.Gate> gates;
 
-	 // table
+	 //table
     List<logiccircuits.Wire> wires;
 
-	 // table
+	 //table
     int num_and = 0, num_or = 0, num_nand = 0, num_nor = 0, num_inv = 0;
 
 	
 
-    public int getGateNum(String type) { // table
+    public int getGateNum(String type) { //table
         switch (type) {
             case "and":
                 return num_and;
@@ -66,7 +66,7 @@ public   class  Circuit {
 
 	
 
-    public void addOneGate(String type) { // table
+    public void addOneGate(String type) { //table
         switch (type) {
             case "and":
                 num_and += 1;
@@ -88,7 +88,7 @@ public   class  Circuit {
 
 	
 
-    public void print() { // table
+    public void print() { //table
         System.out.format("circuit(%s).\n", this.name);
         
         System.out.println();

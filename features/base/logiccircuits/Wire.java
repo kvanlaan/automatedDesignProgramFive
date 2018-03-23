@@ -1,11 +1,11 @@
 package logiccircuits;
 
 public class Wire {
-	Circuit circuit;
-    Gate from, to;
-    int toPin;
+	Circuit circuit; //base
+    Gate from, to; //base
+    int fromPin, toPin; //base
 
-    public Wire(Circuit xx, Gate from, int fromPin, Gate to, int toPin) { // base
+    public Wire(Circuit xx, Gate from, int fromPin, Gate to, int toPin) { //base
         this.circuit = xx;
         
         this.from = from;

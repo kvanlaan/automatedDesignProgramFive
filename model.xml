@@ -10,7 +10,35 @@
 				<feature name="eval"/>
 			</and>
 		</struct>
-		<constraints/>
+		<constraints>
+			<rule>
+				<imp>
+					<var>table</var>
+					<var>beautify</var>
+				</imp>
+			</rule>
+			<rule>
+				<imp>
+					<var>conform</var>
+					<conj>
+						<var>beautify</var>
+						<var>table</var>
+					</conj>
+				</imp>
+			</rule>
+			<rule>
+				<imp>
+					<var>eval</var>
+					<conj>
+						<var>beautify</var>
+						<conj>
+							<var>table</var>
+							<var>conform</var>
+						</conj>
+					</conj>
+				</imp>
+			</rule>
+		</constraints>
 		<calculations Auto="true" Constraints="true" Features="true" Redundant="true" Tautology="true"/>
 		<comments/>
 		<featureOrder userDefined="false"/>
