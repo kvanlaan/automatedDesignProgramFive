@@ -1,8 +1,7 @@
 package logiccircuits;
 
 public class Circuit {
-
-    String name;
+	String name;
 
     // fill in the rest
     public Circuit(String s) {

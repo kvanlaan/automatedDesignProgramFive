@@ -1,7 +1,7 @@
 package logiccircuits;
 
 public class Gate {
-    public final String name;
+	public final String name;
     int nInputPins, nOutputPins;
     String type;
     Circuit circuit;

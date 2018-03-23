@@ -1,43 +1,19 @@
-package Application; 
+package Application;
 
-import logiccircuits.*; 
+import logiccircuits.Circuit;
+import logiccircuits.Gate;
+import logiccircuits.Wire;
 
-import logiccircuits.Circuit; 
-import logiccircuits.Gate; 
-import logiccircuits.Wire; 
-
-public   class  Main {
-	
-	boolean basefeature = true;
-
-	
-	boolean beautifyfeature = false;
-
-	
-	boolean tablefeature = false;
-
-	
-	boolean conformfeature  = false;
-
-	
-	boolean evalfeature = false;
-
-	
-	public Main  () {
-		basefeature = true;
-	
+public class Main {
+	public Main() {
 		beautifyfeature = true;
 	}
-
 	
-	
-	public void print  () {
+	public void print() {
 		System.out.println("beautify");
 	}
-
 	
-	
-	public void create_circuit  () {
+	public void create_circuit() {
 		Circuit xx = new Circuit("XX"); // beautify - create circuit
 		
         Gate A = new Input(xx,"A");
@@ -63,20 +39,5 @@ public   class  Main {
         new Wire(xx,or,β);
         new Wire(xx,and, α);
 	}
-
-	
-	
-	/******************************************************************************************************/
-	
-	static Main me;
-
-	
-	
-	public static void main(String[] args) {
-    	me = new Main();
-    	me.print();
-    	me.create_circuit();
-	}
-
-
 }
+

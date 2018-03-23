@@ -2,7 +2,7 @@ package logiccircuits;
 
 public  class  Wire {
 	
-    Circuit circuit;
+	Circuit circuit;
 
 	
     Gate out, in;

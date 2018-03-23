@@ -2,8 +2,7 @@ package logiccircuits;
 
 public  class  Circuit {
 	
-
-    String name;
+	String name;
 
 	
 
