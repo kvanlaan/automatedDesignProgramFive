@@ -13,6 +13,5 @@ public class Gate {
         this.nInputPins = nInputPins;
         this.nOutputPins = nOutputPins;
         this.type = type;
-        // fill in
     }
 }

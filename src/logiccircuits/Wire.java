@@ -1,34 +1,46 @@
 package logiccircuits; 
 
-public  class  Wire {
+
+public   class  Wire {
 	
 	Circuit circuit;
 
 	
-    Gate out, in;
+    Gate from, to;
 
 	
-    int oPin = 1, iPin;
+    int toPin;
 
 	
 
-    // fill in the rest
-    public Wire(Circuit xx, Gate out, Gate in, int iPin) {
+    public Wire(Circuit xx, Gate from, int fromPin, Gate to, int toPin) { // base
         this.circuit = xx;
         
-        this.out = out;
-        this.in = in;
-        this.iPin = iPin;
+        this.from = from;
+        this.fromPin = fromPin;
+        this.to = to;
+        this.toPin = toPin;
     }
 
 	
+	int fromPin;
+
+	 // beautify 
     
-    public Wire(Circuit xx, Gate out, Gate in) {
-        this.circuit = xx;
-        
-        this.out = out;
-        this.in = in;
-        this.iPin = 1;
+    public Wire(Circuit circuit, Gate from, int fromPin, Gate to) { // beautify
+        this(circuit, from, fromPin, to, 1);
+    }
+
+	
+
+    public Wire(Circuit circuit, Gate from, Gate to, int toPin) { // beautify
+		this(circuit, from, 1, to, toPin);
+    }
+
+	
+
+    public Wire(Circuit circuit, Gate from, Gate to) { // beautify
+		this(circuit, from, 1, to, 1);
     }
 
 

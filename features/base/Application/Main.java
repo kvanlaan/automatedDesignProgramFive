@@ -3,11 +3,11 @@ package Application;
 import logiccircuits.*;
 
 public class Main {
-	boolean basefeature = true;
-	boolean beautifyfeature = false;
-	boolean tablefeature = false;
-	boolean conformfeature  = false;
-	boolean evalfeature = false;
+	public static boolean basefeature = true;
+	public static boolean beautifyfeature = false;
+	public boolean tablefeature = false;
+	public boolean conformfeature  = false;
+	public boolean evalfeature = false;
 	
 	public Main() {
 		basefeature = true;
@@ -32,16 +32,16 @@ public class Main {
 	    Gate and = xx.Gate("and", 3, 1, "and");
 	    Gate or = xx.Gate("or", 2, 1, "or");
 	 
-	    new Wire(xx,A,nor,1);
-	    new Wire(xx,B,nor,2);
-	    new Wire(xx,nor,and, 1);
-	    new Wire(xx,C,or, 1);
-	    new Wire(xx,D,or, 2);
-	    new Wire(xx,C,inv, 1);
-	    new Wire(xx,inv,and, 2);
-	    new Wire(xx,or,and, 3);
-	    new Wire(xx,or,β);
-	    new Wire(xx,and, α);
+	    new Wire(xx,A,1,nor,1);
+	    new Wire(xx,B,1,nor,2);
+	    new Wire(xx,nor,1,and,1);
+	    new Wire(xx,C,1,or,1);
+	    new Wire(xx,D,1,or,2);
+	    new Wire(xx,C,1,inv,1);
+	    new Wire(xx,inv,1,and,2);
+	    new Wire(xx,or,1,and,3);
+	    new Wire(xx,or,1,β,1);
+	    new Wire(xx,and,1,α,1);
 	}
 	
 	/******************************************************************************************************/

@@ -1,6 +1,6 @@
 package logiccircuits; 
 
-public  class  Gate {
+public   class  Gate {
 	
 	public final String name;
 
@@ -22,7 +22,6 @@ public  class  Gate {
         this.nInputPins = nInputPins;
         this.nOutputPins = nOutputPins;
         this.type = type;
-        // fill in
     }
 
 

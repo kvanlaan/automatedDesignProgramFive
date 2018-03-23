@@ -1,8 +1,7 @@
 package Application;
 
-import logiccircuits.Circuit;
-import logiccircuits.Gate;
-import logiccircuits.Wire;
+import logiccircuits.*;
+import logiccircuits.library.*;
 
 public class Main {
 	public Main() {

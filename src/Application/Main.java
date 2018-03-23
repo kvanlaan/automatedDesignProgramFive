@@ -1,26 +1,23 @@
 package Application; 
 
 import logiccircuits.*; 
-
-import logiccircuits.Circuit; 
-import logiccircuits.Gate; 
-import logiccircuits.Wire; 
+import logiccircuits.library.*; 
 
 public   class  Main {
 	
-	boolean basefeature = true;
+	public static boolean basefeature = true;
 
 	
-	boolean beautifyfeature = false;
+	public static boolean beautifyfeature = false;
 
 	
-	boolean tablefeature = false;
+	public boolean tablefeature = false;
 
 	
-	boolean conformfeature  = false;
+	public boolean conformfeature  = false;
 
 	
-	boolean evalfeature = false;
+	public boolean evalfeature = false;
 
 	
 	public Main  () {
