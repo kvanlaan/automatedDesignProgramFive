@@ -1,51 +1,18 @@
-package logiccircuits; 
+package logiccircuits;
 
-import java.util.List; 
-import java.util.LinkedList; 
+import java.util.List;
+import java.util.LinkedList;
 
-public   class  Circuit {
-	
-	String name;
+public class Circuit {
 
-	 // table
+    List<logiccircuits.Gate> gates; // table
+    List<logiccircuits.Wire> wires; // table
+    int num_and = 0, num_or = 0, num_nand = 0, num_nor = 0, num_inv = 0; // table
 
-    public Circuit  (String s) {
-        name = s;
-    
+    public Circuit(String s) {
         gates = new LinkedList<logiccircuits.Gate>(); // table
         wires = new LinkedList<logiccircuits.Wire>(); // table
     }
-
-	
-    
-     
-    
-    class  Gate  extends logiccircuits.Gate {
-		 // base
-    	public Gate(Circuit circuit, String name, int nInputPins, int nOutputPins, String type) {
-    		super(circuit, name, nInputPins, nOutputPins, type);
-    	}
-
-
-	}
-
-	
-    
-    public Gate Gate(String name, int nInputPins, int nOutputPins, String type) { // base
-		return new Gate(this, name, nInputPins, nOutputPins, type);
-    }
-
-	
-
-    List<logiccircuits.Gate> gates;
-
-	 // table
-    List<logiccircuits.Wire> wires;
-
-	 // table
-    int num_and = 0, num_or = 0, num_nand = 0, num_nor = 0, num_inv = 0;
-
-	
 
     public int getGateNum(String type) { // table
         switch (type) {
@@ -63,8 +30,6 @@ public   class  Circuit {
                 return -1;
         }
     }
-
-	
 
     public void addOneGate(String type) { // table
         switch (type) {
@@ -86,8 +51,6 @@ public   class  Circuit {
         }
     }
 
-	
-
     public void print() { // table
         System.out.format("circuit(%s).\n", this.name);
         
@@ -101,6 +64,4 @@ public   class  Circuit {
         	wire.print();
         }
     }
-
-
 }

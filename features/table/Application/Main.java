@@ -5,16 +5,16 @@ import logiccircuits.library.*;
 
 public class Main {
 	public Main() {
-		beautifyfeature = true;
+		tablefeature = true;
 	}
 	
 	public void print() {
 		original();
-		System.out.println("beautify");
+		System.out.println("table");
 	}
 	
 	public void create_circuit() {
-		Circuit xx = new Circuit("XX"); // beautify - create circuit
+		Circuit xx = new Circuit("XX"); // table - create circuit
 		
         Gate A = new Input(xx,"A");
         Gate B = new Input(xx,"B");
@@ -38,6 +38,8 @@ public class Main {
         new Wire(xx,or,and, 3);
         new Wire(xx,or,β);
         new Wire(xx,and, α);
+        
+		xx.print();
 	}
 }
 

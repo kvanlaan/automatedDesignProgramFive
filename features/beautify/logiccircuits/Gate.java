@@ -1,5 +1,5 @@
 package logiccircuits;
 
-public class Gate {
+public abstract class Gate { // beautify makes it abstract
 
 }
