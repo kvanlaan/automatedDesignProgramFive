@@ -11,11 +11,16 @@ public   class  Circuit {
 	
 	String name;
 
-	 //table
+	
 
+    // fill in the rest
     public Circuit  (String s) {
         name = s;
     
+        gates = new LinkedList<logiccircuits.Gate>(); //table
+        wires = new LinkedList<logiccircuits.Wire>(); //table
+    
+    	name = s;
         gates = new LinkedList<logiccircuits.Gate>(); //table
         wires = new LinkedList<logiccircuits.Wire>(); //table
     }
@@ -107,7 +112,8 @@ public   class  Circuit {
     }
 
 	
-    public void validate() {
+
+    public void validate  () {
         ErrorReport er = new ErrorReport();
 
         // Constraint 1: Each Gate has a unique id
@@ -134,7 +140,7 @@ public   class  Circuit {
         // Constraint 4-6: All wires are properly connected
         ArrayList<logiccircuits.Gate> inputGates = new ArrayList<logiccircuits.Gate>();
         ArrayList<logiccircuits.Gate> outputGates = new ArrayList<logiccircuits.Gate>();
-        for(logiccircuits.Wire wire: wires) {
+        for (logiccircuits.Wire wire: wires) {
             if (wire.to == null || wire.from == null) {
                 er.add("Wire is missing either a to or from pin");
             }
@@ -177,8 +183,37 @@ public   class  Circuit {
         er.printReportEH(System.out);
 
         if (!er.printReport(System.out)) {
-            System.out.format("All constraints satisfied for this cicuit");
+            this.conform = true;
         }
+    }
+
+	
+
+    boolean conform = false;
+
+	
+    
+    public boolean isConformed() {
+        return this.conform;
+    }
+
+	
+    
+    public void initValues() {
+    	for(logiccircuits.Gate gate: gates) {
+            gate.setValue(Value.U);
+        };
+    }
+
+	
+    
+    public logiccircuits.Gate findInputGate(String to_gid, int to_pin_no) {
+        for (logiccircuits.Wire wire : wires) {
+            if ((wire.getTo().getGid().equals(to_gid)) && (wire.getToPin() == to_pin_no)) {
+                return wire.getFrom();
+            }
+        }
+        throw Err.toss("Input gate %s value is unknown.", to_gid);
     }
 
 

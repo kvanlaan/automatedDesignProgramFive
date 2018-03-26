@@ -3,6 +3,12 @@ package Application;
 import logiccircuits.*;
 
 public class Main {
+
+    static int one = 1;
+    static int two = 2;
+    static int four = 4;
+    static int ate = 8;
+
 	public Main() {
 		conformfeature = true;
 	}

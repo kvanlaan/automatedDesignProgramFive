@@ -36,8 +36,8 @@ public class Circuit {
         }
 
         // Constraint 4-6: All wires are properly connected
-        ArrayList<Gate> inputGates = new ArrayList<logiccircuits.Gate>();
-        ArrayList<Gate> outputGates = new ArrayList<logiccircuits.Gate>();
+        ArrayList<logiccircuits.Gate> inputGates = new ArrayList<logiccircuits.Gate>();
+        ArrayList<logiccircuits.Gate> outputGates = new ArrayList<logiccircuits.Gate>();
         for (logiccircuits.Wire wire: wires) {
             if (wire.to == null || wire.from == null) {
                 er.add("Wire is missing either a to or from pin");
@@ -95,7 +95,7 @@ public class Circuit {
         };
     }
     
-    public Gate findInputGate(String to_gid, int to_pin_no) {
+    public logiccircuits.Gate findInputGate(String to_gid, int to_pin_no) {
         for (logiccircuits.Wire wire : wires) {
             if ((wire.getTo().getGid().equals(to_gid)) && (wire.getToPin() == to_pin_no)) {
                 return wire.getFrom();

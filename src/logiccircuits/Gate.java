@@ -11,11 +11,11 @@ public abstract   class  Gate {
     String type;
 
 	 //base
-    Circuit circuit;
+    logiccircuits.Circuit circuit;
 
 	 //table
     
-    protected Gate  (Circuit circuit, String name, int nInputPins, int nOutputPins, String type) { //base
+    protected Gate  (logiccircuits.Circuit circuit, String name, int nInputPins, int nOutputPins, String type) { //base
         this.circuit = circuit;
         
         this.name = name;
@@ -58,6 +58,34 @@ public abstract   class  Gate {
     
     public void print() { //table
         System.out.format("gate(%s,%s,%d,%d).\n", this.name, this.type, this.nInputPins, this.nOutputPins);
+    }
+
+	
+    Value evalValue;
+
+	
+    public String getGid() {
+        return this.gid;
+    }
+
+	
+    public void setValue(Value v) {
+        this.evalValue = v;
+    }
+
+	
+    public void set(boolean v) {
+        if (v == true) {
+            this.setValue(Value.T);
+        } else {
+            this.setValue(Value.F);
+        }
+    }
+
+	
+    
+    public boolean get() {
+    	return false;
     }
 
 

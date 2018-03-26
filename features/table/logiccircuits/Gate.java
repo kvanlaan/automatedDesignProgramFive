@@ -3,7 +3,7 @@ package logiccircuits;
 public abstract class Gate {
     String gid; //table
     
-    protected Gate(Circuit circuit, String name, int nInputPins, int nOutputPins, String type) {
+    protected Gate(logiccircuits.Circuit circuit, String name, int nInputPins, int nOutputPins, String type) {
         this.gid = this.getGateId(); //table
         this.addToCircuitTable(this.circuit); //table
     }

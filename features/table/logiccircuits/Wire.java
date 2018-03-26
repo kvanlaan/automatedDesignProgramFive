@@ -3,7 +3,7 @@ package logiccircuits;
 public class Wire {
     String wid; //table
 
-    public Wire(Circuit xx, Gate from, int fromPin, Gate to, int toPin) {        
+    public Wire(logiccircuits.Circuit xx, logiccircuits.Gate from, int fromPin, logiccircuits.Gate to, int toPin) {        
         this.wid = this.getWireId(); //table
         addToCircuitTable(this.circuit); //table
     }

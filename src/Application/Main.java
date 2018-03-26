@@ -20,12 +20,15 @@ public   class  Main {
 	public boolean evalfeature = false;
 
 	
+
 	public Main  () {
 		basefeature = true;
 	
 		beautifyfeature = true;
 	
 		tablefeature = true;
+	
+		conformfeature = true;
 	
 		conformfeature = true;
 	}
@@ -52,13 +55,20 @@ public   class  Main {
 
 	
 	
-	public void print() {
+	 private void  print__wrappee__conform  () {
 		print__wrappee__table();
 		System.out.println("conform");
 	}
 
 	
-   
+	
+	public void print() {
+		print__wrappee__conform();
+		System.out.println("eval");
+	}
+
+	
+
 	public void create_circuit  () {
         Circuit xx = new Circuit("XX");         // create a new circuit object xx called "XX"
 
@@ -84,8 +94,41 @@ public   class  Main {
         new Wire(xx,or,and, 3);
         new Wire(xx,or,β);
         new Wire(xx,and, α);
-        xx.validate();
+
         xx.print();
+        xx.validate();
+        
+        for (int i = 0; i < 16; i++) {
+            xx.initValues();
+            
+            boolean Avalue = z(i, one);
+            boolean Bvalue = z(i, two);
+            boolean Cvalue = z(i, four);
+            boolean Dvalue = z(i, ate);
+
+            A.set(Avalue);
+            B.set(Bvalue);
+            C.set(Cvalue);
+            D.set(Dvalue);
+            boolean result;
+            result = α.get();
+            String is = i+"";
+            if (result != alpha(Avalue, Bvalue, Cvalue, Dvalue)) {
+                throw Err.toss("alpha doesn't match for experiment %s", is);
+            }
+            result = β.get();
+            if (result!= beta(Avalue, Bvalue, Cvalue, Dvalue)) {
+                throw Err.toss("beta doesn't match for experiment %s", is);
+            }
+        }
+        
+        
+        if (xx.isConformed()) {
+            System.out.format("\nAll constraints satisfied for this cicuit.");
+        }
+        // if we get this far all evaluations are good
+        System.out.println();
+        System.out.println("Evaluation all Good!");
     }
 
 	
@@ -102,6 +145,40 @@ public   class  Main {
     	System.out.println();
     	me.create_circuit();
 	}
+
+	
+
+    static int one = 1;
+
+	
+    static int two = 2;
+
+	
+    static int four = 4;
+
+	
+    static int ate = 8;
+
+	
+
+    static boolean z(int i, int mod) {
+        return (i & mod) == 0;
+    }
+
+	
+
+    static boolean alpha(boolean a, boolean b, boolean c, boolean d) {
+        boolean nor = !(a || b);
+        boolean or = (c || d);
+        boolean inv = !c;
+        return nor && inv && or;
+    }
+
+	
+
+    static boolean beta(boolean a, boolean b, boolean c, boolean d) {
+        return c || d;
+    }
 
 
 }
