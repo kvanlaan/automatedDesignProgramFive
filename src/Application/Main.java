@@ -26,6 +26,8 @@ public   class  Main {
 		beautifyfeature = true;
 	
 		tablefeature = true;
+	
+		conformfeature = true;
 	}
 
 	
@@ -43,16 +45,23 @@ public   class  Main {
 
 	
 	
-	public void print() {
+	 private void  print__wrappee__table  () {
 		print__wrappee__beautify();
 		System.out.println("table");
 	}
 
 	
 	
+	public void print() {
+		print__wrappee__table();
+		System.out.println("conform");
+	}
+
+	
+   
 	public void create_circuit  () {
-		Circuit xx = new Circuit("XX"); //table - create circuit
-		
+        Circuit xx = new Circuit("XX");         // create a new circuit object xx called "XX"
+
         Gate A = new Input(xx,"A");
         Gate B = new Input(xx,"B");
         Gate C = new Input(xx,"C");
@@ -75,9 +84,9 @@ public   class  Main {
         new Wire(xx,or,and, 3);
         new Wire(xx,or,β);
         new Wire(xx,and, α);
-        
-		xx.print();
-	}
+        xx.validate();
+        xx.print();
+    }
 
 	
 	
