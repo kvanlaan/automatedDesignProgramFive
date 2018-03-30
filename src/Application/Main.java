@@ -5,32 +5,12 @@ import logiccircuits.library.*;
 
 public   class  Main {
 	
-	public static boolean basefeature = true;
-
-	
-	public static boolean beautifyfeature = false;
-
-	
-	public boolean tablefeature = false;
-
-	
-	public boolean conformfeature  = false;
-
-	
-	public boolean evalfeature = false;
-
-	
 
 	public Main  () {
-		basefeature = true;
 	
-		beautifyfeature = true;
 	
-		tablefeature = true;
 	
-		conformfeature = true;
 	
-		conformfeature = true;
 	}
 
 	

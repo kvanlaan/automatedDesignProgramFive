@@ -10,7 +10,6 @@ public class Main {
     static int ate = 8;
 
 	public Main() {
-		conformfeature = true;
 	}
 	
 	public void print() {

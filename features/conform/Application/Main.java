@@ -4,7 +4,6 @@ import logiccircuits.*;
 
 public class Main {
 	public Main() {
-		conformfeature = true;
 	}
 	
 	public void print() {

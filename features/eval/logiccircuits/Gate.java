@@ -15,8 +15,14 @@ public abstract class Gate {
             this.setValue(Value.F);
         }
     }
+    public Value getValue() {
+        return this.evalValue;
+    }
     
-    public boolean get() {
-    	return false;
+    public abstract boolean get();
+    
+    
+    public Gate findInputGate(String gid, int pin_no) {
+        return this.circuit.findInputGate(gid, pin_no);
     }
 }

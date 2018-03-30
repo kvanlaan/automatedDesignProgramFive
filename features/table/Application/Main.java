@@ -5,7 +5,6 @@ import logiccircuits.library.*;
 
 public class Main {
 	public Main() {
-		tablefeature = true;
 	}
 	
 	public void print() {

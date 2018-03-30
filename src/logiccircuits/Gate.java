@@ -15,7 +15,7 @@ public abstract   class  Gate {
 
 	 //table
     
-    protected Gate  (logiccircuits.Circuit circuit, String name, int nInputPins, int nOutputPins, String type) { //base
+    public Gate  (logiccircuits.Circuit circuit, String name, int nInputPins, int nOutputPins, String type) { //base
         this.circuit = circuit;
         
         this.name = name;
@@ -83,9 +83,19 @@ public abstract   class  Gate {
     }
 
 	
+    public Value getValue() {
+        return this.evalValue;
+    }
+
+	
     
-    public boolean get() {
-    	return false;
+    public abstract boolean get();
+
+	
+    
+    
+    public Gate findInputGate(String gid, int pin_no) {
+        return this.circuit.findInputGate(gid, pin_no);
     }
 
 
